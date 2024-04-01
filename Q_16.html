@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educational Institute</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    .timetable {
+      margin: 20px auto;
+      width: 80%;
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+    .subject-images {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+    .subject-images img {
+      width: 200px;
+      height: 200px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .subject-images img:hover {
+      transform: scale(1.1);
+    }
+    form {
+      margin: 20px auto;
+      width: 50%;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    form input[type="text"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    form input[type="radio"] {
+      margin-right: 5px;
+    }
+    form label {
+      display: block;
+    }
+    form button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    form button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <svg width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="40" stroke="white" stroke-width="3" fill="#007bff"/>
+    <text x="25" y="60" fill="white" font-size="30">Logo</text>
+  </svg>
+  <h1>Educational Institute</h1>
+</header>
+
+<div class="timetable">
+  <h2>Timetable</h2>
+  <table border="1" cellspacing="0" cellpadding="10" width="100%">
+    <tr>
+      <th>Time</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+    </tr>
+    <tr>
+      <td>1:00 PM - 2:00 PM</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+    </tr>
+    <tr>
+      <td>2:00 PM - 3:00 PM</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+      <td>Lecture</td>
+    </tr>
+  </table>
+</div>
+
+<div class="subject-images">
+  <img src="subject1.jpg" alt="Subject 1">
+  <img src="subject2.jpg" alt="Subject 2">
+  <img src="subject3.jpg" alt="Subject 3">
+</div>
+
+<form>
+  <h2>Feedback Form</h2>
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" required>
+  <label for="comments">Comments:</label>
+  <textarea id="comments" name="comments" rows="4" required></textarea>
+  <label for="experience">Experience:</label><br>
+  <input type="radio" id="very-bad" name="experience" value="Very Bad">
+  <label for="very-bad">Very Bad</label><br>
+  <input type="radio" id="good" name="experience" value="Good">
+  <label for="good">Good</label><br>
+  <input type="radio" id="very-good" name="experience" value="Very Good">
+  <label for="very-good">Very Good</label><br>
+  <input type="radio" id="excellent" name="experience" value="Excellent">
+  <label for="excellent">Excellent</label><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>
