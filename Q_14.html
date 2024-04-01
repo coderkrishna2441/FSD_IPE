@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exam Form Validation</title>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Exam Registration Form</h2>
+    <form id="examForm">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <span id="nameError" class="error"></span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <span id="emailError" class="error"></span>
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone" required>
+            <span id="phoneError" class="error"></span>
+        </div>
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <span id="messageError" class="error"></span>
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('examForm');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            validateForm();
+        });
+
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const phoneError = document.getElementById('phoneError');
+            const messageError = document.getElementById('messageError');
+
+            // Reset previous errors
+            nameError.textContent = '';
+            emailError.textContent = '';
+            phoneError.textContent = '';
+            messageError.textContent = '';
+
+            // Validate name length
+            if (name.length !== 8) {
+                nameError.textContent = 'Name must be 8 characters long';
+            }
+
+            // Validate email format
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Invalid email format';
+            }
+
+            // Validate phone number format
+            const phoneRegex = /^\d{10}$/;
+            if (!phoneRegex.test(phone)) {
+                phoneError.textContent = 'Invalid phone number format';
+            }
+
+            // Display error message if any field is empty
+            if (message === '') {
+                messageError.textContent = 'Please enter a message';
+            }
+        }
+    </script>
+</body>
+</html>
