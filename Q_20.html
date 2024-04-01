@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animated SVG Ball</title>
+<style>
+  @keyframes changeColor {
+    0%, 100% {
+      fill: red;
+    }
+    25% {
+      fill: yellow;
+    }
+    50% {
+      fill: green;
+    }
+    75% {
+      fill: blue;
+    }
+  }
+  
+  @keyframes zigzag {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+    25% {
+      transform: translate(50%, 0);
+    }
+    50% {
+      transform: translate(50%, 50%);
+    }
+    75% {
+      transform: translate(0, 50%);
+    }
+  }
+</style>
+</head>
+<body>
+
+<svg width="300" height="300">
+  <circle id="ball" cx="50" cy="50" r="40" fill="red" style="animation: changeColor 4s linear infinite, zigzag 4s linear infinite;" />
+</svg>
+
+</body>
+</html>
