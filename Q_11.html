@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script>
+            // Define two arrays
+const array1 = [5, 10, 15, 20, 25];
+const array2 = [30, 35, 40, 45, 50];
+
+// Arrow function to merge both arrays into a third array
+const mergeArrays = (arr1, arr2) => [...arr1, ...arr2];
+
+// Find second maximum from both arrays without sorting
+const findSecondMax = (arr1, arr2) => {
+    const max1 = Math.max(...arr1);
+    const max2 = Math.max(...arr2);
+    let secondMax1 = Number.NEGATIVE_INFINITY;
+    let secondMax2 = Number.NEGATIVE_INFINITY;
+
+    for (let num of arr1) {
+        if (num !== max1 && num > secondMax1) {
+            secondMax1 = num;
+        }
+    }
+
+    for (let num of arr2) {
+        if (num !== max2 && num > secondMax2) {
+            secondMax2 = num;
+        }
+    }
+
+    return Math.max(secondMax1, secondMax2);
+};
+
+// Find summation of both individual arrays
+const sumOfArrays = (arr1, arr2) => {
+    let sum1 = 0;
+    let sum2 = 0;
+
+    for (let num of arr1) {
+        sum1 += num;
+    }
+
+    for (let num of arr2) {
+        sum2 += num;
+    }
+
+    return sum1 + sum2;
+};
+
+// Test the functions
+const mergedArray = mergeArrays(array1, array2);
+const secondMax = findSecondMax(array1, array2);
+const sum = sumOfArrays(array1, array2);
+
+console.log("Merged Array:", mergedArray);
+console.log("Second Maximum:", secondMax);
+console.log("Summation of both arrays:", sum);
+        </script>
+    </head>
+</html>
