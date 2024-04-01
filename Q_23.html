@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mouse Events</title>
+<style>
+  #heading {
+    font-size: 30px;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h1 id="heading">Heading</h1>
+<button id="red">Red</button>
+<button id="blue">Blue</button>
+<button id="upper">Upper</button>
+<button id="lower">Lower</button>
+<button id="dateTime">Date & Time</button>
+
+<script>
+  const heading = document.getElementById('heading');
+  const redBtn = document.getElementById('red');
+  const blueBtn = document.getElementById('blue');
+  const upperBtn = document.getElementById('upper');
+  const lowerBtn = document.getElementById('lower');
+  const dateTimeBtn = document.getElementById('dateTime');
+
+  heading.addEventListener('click', function() {
+    this.innerHTML = "<em>Full Stack Development - 1</em>";
+    this.style.border = "5px solid black";
+    this.style.fontSize = "50px";
+  });
+
+  heading.addEventListener('mouseover', function() {
+    this.style.color = "green";
+  });
+
+  heading.addEventListener('mouseout', function() {
+    this.style.color = "orange";
+  });
+
+  redBtn.addEventListener('click', function() {
+    heading.style.color = "red";
+  });
+
+  blueBtn.addEventListener('click', function() {
+    heading.style.color = "blue";
+  });
+
+  upperBtn.addEventListener('click', function() {
+    heading.textContent = heading.textContent.toUpperCase();
+  });
+
+  lowerBtn.addEventListener('click', function() {
+    heading.textContent = heading.textContent.toLowerCase();
+  });
+
+  dateTimeBtn.addEventListener('click', function() {
+    const now = new Date();
+    alert("Date & Time: " + now.toLocaleString());
+  });
+
+  document.addEventListener('mousedown', function(event) {
+    switch(event.button) {
+      case 0:
+        alert("You have clicked Left Button");
+        break;
+      case 1:
+        alert("You have clicked Centre Button");
+        break;
+      case 2:
+        alert("You have clicked Right Button");
+        break;
+    }
+  });
+</script>
+
+</body>
+</html>
