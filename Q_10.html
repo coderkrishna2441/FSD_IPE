@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <script>
+            class Stack {
+                constructor() {
+                    this.stack = [];
+                    this.maxSize = 10;
+                }
+
+                push(element) {
+                    if (this.stack.length >= this.maxSize) {
+                    alert("Stack overflow! Cannot push more elements.");
+                    return;
+                    }
+                    this.stack.push(element);
+                }
+
+                pop() {
+                    if (this.stack.length === 0) {
+                    console.log("Stack underflow! Cannot pop from an empty stack.");
+                    return;
+                    }
+                    return this.stack.pop();
+                }
+
+                display() {
+                    console.log("Stack: ", this.stack);
+                }
+                }
+
+                const stack = new Stack();
+
+                // Push operation
+                const elementToPush = prompt("Enter element to push:");
+                stack.push(elementToPush);
+                stack.display();
+
+                // Pop operation
+                const poppedElement = stack.pop();
+                if (poppedElement !== undefined) {
+                console.log("Popped element: ", poppedElement);
+                }
+                stack.display();
+
+        </script>
+    </head>
+</html>
