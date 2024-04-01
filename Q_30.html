@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculator</title>
+<style>
+  // Function to check if a number is palindrome
+function isPalindrome(num) {
+    const str = num.toString();
+    const reversedStr = str.split('').reverse().join('');
+    return str === reversedStr;
+}
+
+// Function to check if a number is prime
+function isPrime(num) {
+    if (num <= 1) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Take input from user
+const num = parseInt(prompt("Enter a number:"));
+
+// Check if the number is palindrome and prime
+if (isPalindrome(num)) {
+    console.log(num + " is a palindrome.");
+} else {
+    console.log(num + " is not a palindrome.");
+}
+
+if (isPrime(num)) {
+    console.log(num + " is a prime number.");
+} else {
+    console.log(num + " is not a prime number.");
+}
+
+</style>
+</head>
+<body>
+
+<button id="add">+</button>
+<button id="subtract">-</button>
+<button id="multiply">*</button>
+<button id="divide">/</button>
+<br><br>
+<input type="number" id="num1">
+<input type="number" id="num2">
+<button id="calculate">Calculate</button>
+<p id="result"></p>
+
+<script>
+const addBtn = document.getElementById('add');
+const subtractBtn = document.getElementById('subtract');
+const multiplyBtn = document.getElementById('multiply');
+const divideBtn = document.getElementById('divide');
+const calculateBtn = document.getElementById('calculate');
+const resultText = document.getElementById('result');
+const num1Input = document.getElementById('num1');
+const num2Input = document.getElementById('num2');
+
+function add() {
+    const result = parseInt(num1Input.value) + parseInt(num2Input.value);
+    resultText.textContent = "Result: " + result;
+}
+
+function subtract() {
+    const result = parseInt(num1Input.value) - parseInt(num2Input.value);
+    resultText.textContent = "Result: " + result;
+}
+
+function multiply() {
+    const result = parseInt(num1Input.value) * parseInt(num2Input.value);
+    resultText.textContent = "Result: " + result;
+}
+
+function divide() {
+    const result = parseInt(num1Input.value) / parseInt(num2Input.value);
+    resultText.textContent = "Result: " + result;
+}
+
+addBtn.addEventListener('click', add);
+subtractBtn.addEventListener('click', subtract);
+multiplyBtn.addEventListener('click', multiply);
+divideBtn.addEventListener('click', divide);
+</script>
+
+</body>
+</html>
