@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            #car
+            {
+                animation-name:abc;
+                animation-duration:5s;
+                animation-delay:5s;
+                animation-iteration-count:infinite;
+                animation-direction: alternate;
+                position:relative;
+            }
+            @keyframes abc 
+            {
+                0%
+                {
+                    left:0px;
+                    top:0px;
+                }
+                20%
+                {
+                    left:100px;
+                    top:0px;
+                } 
+                40%
+                {
+                    left:100px;
+                    top:100px;
+                } 
+                60%
+                {
+                    left:0px;
+                    top:100px;
+                }
+                100%
+                {
+                    left:0px;
+                    top:0px;
+                }  
+            }
+        </style>
+    </head>
+    <body>
+        <svg height="300" width="300" id="car">
+            <rect height="70" width="150" x="80" y="80" stroke="black" stroke-width="1" fill="blue"/>
+            <rect height="20" width="100" x="80" y="60" stroke="black" stroke-width="1" fill="red"/>
+            <circle cx="100" cy="150" r="15" fill="red" stroke="black" stroke-width="1"/>
+            <circle cx="185" cy="150" r="15" fill="red" stroke="black" stroke-width="1"/>
+            <circle cx="100" cy="150" r="5" fill="blue" stroke="black" stroke-width="1"/>
+            <circle cx="185" cy="150" r="5" fill="blue" stroke="black" stroke-width="1"/>
+        </svg>
+    </body>
+</html>
