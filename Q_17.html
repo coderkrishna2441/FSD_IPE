@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiplication Table</title>
+<style>
+  table {
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+  th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<script>
+  // Prompt user for number of rows and columns
+  var rows = parseInt(prompt("Enter the number of rows:"));
+  var cols = parseInt(prompt("Enter the number of columns:"));
+
+  // Create a table element
+  var table = document.createElement("table");
+
+  // Generate the multiplication table
+  for (var i = 1; i <= rows; i++) {
+    var row = document.createElement("tr");
+    for (var j = 1; j <= cols; j++) {
+      var cell = document.createElement("td");
+      cell.textContent = i * j;
+      row.appendChild(cell);
+    }
+    table.appendChild(row);
+  }
+
+  // Append the table to the body
+  document.body.appendChild(table);
+</script>
+</body>
+</html>
