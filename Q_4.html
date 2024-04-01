@@ -7,33 +7,64 @@ use validation for firstname and lastname should max 20 letters, and also add em
 -->
 
 <html>
-    <head></head>
-    <body>
-        <form>
-            firstname: <input type="text" placeholder="Enter your firstname">
-            <br><br>
-             lastname: <input type="text" placeholder="Enter your lastname">
-             <br><br>
-             DOB <input type="date">
-             <br><br>
-             mobile number: <input type="tel" placeholder="Enter your mobile number">
-             <br><br>
-             gender: <input type="radio" name="x"> Male <input type="radio" name="x"> Female
-             <br><br>
-             <textarea placeholder="Enter your address"></textarea>
-             <br><br>
-             city: <input type="text" placeholder="Enter the city you live in ">
-             <br><br>
-             pincode: <input type="text" placeholder="Enter the pincode of the area you live in ">
-             <br><br>
-             state: <input type="text" placeholder="Enter the state you live in ">
-             <br><br>
-             country: <input type="text" placeholder="Enter the country you live in ">
-             <br><br>
-             hobbies: <input type="checkbox">Reading <input type="checkbox">Singing <input type="checkbox">Drawing
-             <br><br>
-             email id: <input type="email" placeholder="Enter the email id">
-             <br><br>
-        </form>
-    </body>
+<head>
+    <script>
+        // Form validation
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            var firstname = document.getElementById("firstname").value.trim();
+            var lastname = document.getElementById("lastname").value.trim();
+            var email = document.getElementById("email").value.trim();
+
+            // Validate first name and last name length
+            if (firstname.length > 20 || lastname.length > 20) {
+                alert("First name and Last name should not exceed 20 characters.");
+                event.preventDefault();
+            }
+
+            // Validate email using regular expression
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</head>
+<body>
+    <form id="registrationForm">
+        First Name: <input type="text" id="firstname" placeholder="Enter your firstname"><br><br>
+        Last Name: <input type="text" id="lastname" placeholder="Enter your lastname"><br><br>
+        Date of Birth: <input type="date" id="dob"><br><br>
+        Mobile Number: <input type="tel" id="mobile" placeholder="Enter your mobile number"><br><br>
+        Gender: <input type="radio" name="gender" value="male"> Male
+               <input type="radio" name="gender" value="female"> Female<br><br>
+        Address: <textarea id="address" placeholder="Enter your address"></textarea><br><br>
+        City: <input type="text" id="city" placeholder="Enter the city you live in"><br><br>
+        Pincode: <input type="text" id="pincode" placeholder="Enter the pincode of the area you live in"><br><br>
+        State: <input type="text" id="state" placeholder="Enter the state you live in"><br><br>
+        Country: <input type="text" id="country" placeholder="Enter the country you live in"><br><br>
+        Hobbies: <input type="checkbox" id="reading"> Reading
+                 <input type="checkbox" id="singing"> Singing
+                 <input type="checkbox" id="drawing"> Drawing<br><br>
+        Email ID: <input type="email" id="email" placeholder="Enter the email id"><br><br>
+        Qualification:<br>
+        <table id="qualification">
+            <tr>
+                <th>Sr. No.</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Passing Year</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><input type="text" name="board"></td>
+                <td><input type="text" name="percentage"></td>
+                <td><input type="text" name="passing_year"></td>
+            </tr>
+        </table><br>
+        Which course you are applying for: <input type="text" id="course"><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
 </html>
