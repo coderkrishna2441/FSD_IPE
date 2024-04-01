@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Layout</title>
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .section {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  /* Initially, divs have red, green, and blue background */
+  .section:nth-child(1) {
+    background-color: red;
+  }
+
+  .section:nth-child(2) {
+    background-color: green;
+  }
+
+  .section:nth-child(3) {
+    background-color: blue;
+  }
+
+  /* Portrait mode */
+  @media screen and (orientation: portrait) {
+    .section:nth-child(1) {
+      background-color: blue; /* Blue background for first div */
+    }
+
+    .section:nth-child(2) {
+      background-color: red; /* Red background for second div */
+    }
+
+    .section:nth-child(3) {
+      background-color: green; /* Green background for third div */
+    }
+  }
+
+  /* Rainbow effect */
+  .rainbow {
+    background: linear-gradient(to right, violet, indigo, blue, green, yellow, orange, red);
+  }
+
+  /* Image with border, transparency, and rounded corners */
+  .image {
+    border: 5px solid #fff; /* White border */
+    border-radius: 20px; /* Rounded corners */
+    opacity: 0.5; /* 50% transparency */
+    overflow: hidden;
+  }
+
+  .image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Responsive video */
+  .video {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio (height: width) */
+    overflow: hidden;
+  }
+
+  .video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- First section with rainbow effect -->
+  <div class="section rainbow">
+    <h2>Section 1</h2>
+  </div>
+
+  <!-- Second section with image -->
+  <div class="section image">
+    <h2>Section 2</h2>
+    <img src="your-image.jpg" alt="Your Image">
+  </div>
+
+  <!-- Third section with looping YouTube video -->
+  <div class="section video">
+    <h2>Section 3</h2>
+    <iframe src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+  </div>
+</div>
+
+</body>
+</html>
